@@ -47,6 +47,5 @@ func main() {
     outputFilePtr := flag.String("output-file", "./output", "the output file")
     flag.Parse()
     m := ParseArguments(flag.Args())
-    fmt.Println(m)
     Process(*inputFilePtr, *outputFilePtr, m)
 }
