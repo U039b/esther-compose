@@ -17,14 +17,12 @@ func check(e error) {
 func ParseArguments(args []string) map[string]string {
     m := make(map[string]string)
     for index, entry := range args {
-        fmt.Printf("%d = %s \n", index, entry)
         vars := strings.Split(entry, "=")
         if(len(vars) != 2){
             continue
         }
         k := vars[0]
         v := vars[1]
-        fmt.Printf("%s = %s \n", k, v)
         m[k] = v
     }
     return m
