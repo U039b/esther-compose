@@ -1,4 +1,4 @@
-rm -rf ./pkg/*
+mkdir ./pkg
 
 export GOOS=darwin
 export GOARCH=386
