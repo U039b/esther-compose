@@ -1,0 +1,9 @@
+compile_all:
+  script:
+   - sh build.sh
+  artifacts:
+   paths:
+    - pkg/esther-compose_darwin_386
+    - pkg/esther-compose_darwin_amd64
+    - pkg/esther-compose_linux_386
+    - pkg/esther-compose_linux_amd64
