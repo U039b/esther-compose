@@ -22,9 +22,8 @@ import ("bufio"
         "fmt"
         "os"
         "flag"
-        "runtime"
-        "strings"
         "./mustache"
+        "encoding/json"
 )
 func check(e error) {
     if e != nil {
@@ -32,21 +31,24 @@ func check(e error) {
     }
 }
 
-func ParseArguments(args []string) map[string]string {
-    m := make(map[string]string)
-    for index, entry := range args {
-        vars := strings.Split(entry, "=")
-        if(len(vars) != 2){
-            continue
-        }
-        k := vars[0]
-        v := vars[1]
-        m[k] = v
-    }
-    return m
+func read_input() string {
+    var json string = ""
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		json += scanner.Text()
+	}
+	if err := scanner.Err(); err != nil {
+		fmt.Fprintln(os.Stderr, "reading standard input:", err)
+	}
+    return json
 }
 
-func Process(templateFile string, outputFile string, parameters map[string]string) {
+func is_piped() bool {
+    stat, _ := os.Stdin.Stat()
+    return (stat.Mode() & os.ModeCharDevice) == 0
+}
+
+func Process(templateFile string, outputFile string, parameters interface{}) {
     t, err := mustache.ParseFile(templateFile)
     check(err)
     s, _ := t.Render(parameters)
@@ -60,10 +62,14 @@ func Process(templateFile string, outputFile string, parameters map[string]strin
 }
 
 func main() {
-    fmt.Printf("OS: %s\nArchitecture: %s\n", runtime.GOOS, runtime.GOARCH)
-    inputFilePtr := flag.String("input-file", "./template.esther", "the template file")
-    outputFilePtr := flag.String("output-file", "./output", "the output file")
+    inputFilePtr := flag.String("template", "./template.txt", "the template file")
+    outputFilePtr := flag.String("output", "./output", "the output file")
     flag.Parse()
-    m := ParseArguments(flag.Args())
-    Process(*inputFilePtr, *outputFilePtr, m)
+
+    json_txt := read_input()
+    var obj interface{}
+    json.Unmarshal([]byte(json_txt), &obj)
+    Process(*inputFilePtr, *outputFilePtr, obj)
+    fmt.Println("Finish")
+    return 0
 }
