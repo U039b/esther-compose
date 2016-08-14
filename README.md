@@ -32,6 +32,14 @@ So **Esther-compose** uses a JSON document to render the given template.
   
 The JSON document is read from the standard input. It could be either piped or manually typed.
 
+## Binary distribution
+A compiled version is available in the `pkg` folder:
+
+  * `darwin 386`
+  * `darwin amd64`
+  * `linux 386`
+  * `linux amd64`
+
 ## Example
 **data.json**
 ```
