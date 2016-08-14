@@ -71,5 +71,4 @@ func main() {
     json.Unmarshal([]byte(json_txt), &obj)
     Process(*inputFilePtr, *outputFilePtr, obj)
     fmt.Println("Finish")
-    return 0
 }
