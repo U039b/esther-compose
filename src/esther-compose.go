@@ -24,6 +24,7 @@ import ("bufio"
         "flag"
         "./mustache"
         "encoding/json"
+    "strings"
 )
 func check(e error) {
     if e != nil {
@@ -52,23 +53,27 @@ func Process(templateFile string, outputFile string, parameters interface{}) {
     t, err := mustache.ParseFile(templateFile)
     check(err)
     s, _ := t.Render(parameters)
-    f, err := os.Create(outputFile)
-    check(err)
-    defer f.Close()
-    w := bufio.NewWriter(f)
-    _, err = w.WriteString(s)
-    w.Flush()
-    check(err)
+    if strings.Compare("EMPTY", outputFile) != 0 {
+        f, err := os.Create(outputFile)
+        check(err)
+        defer f.Close()
+        w := bufio.NewWriter(f)
+        _, err = w.WriteString(s)
+        w.Flush()
+        check(err)
+        fmt.Println("Finish")
+    } else {
+        fmt.Printf("%s\n", s)
+    }
 }
 
 func main() {
     inputFilePtr := flag.String("template", "./template.txt", "the template file")
-    outputFilePtr := flag.String("output", "./output", "the output file")
+    outputFilePtr := flag.String("output", "EMPTY", "the output file")
     flag.Parse()
 
     json_txt := read_input()
     var obj interface{}
     json.Unmarshal([]byte(json_txt), &obj)
     Process(*inputFilePtr, *outputFilePtr, obj)
-    fmt.Println("Finish")
 }
