@@ -20,15 +20,18 @@ GPG: 29AF AD6D 8148 48FB 8147 3CEF E564 0E6E 5683 039D
 Prefer browsing the code and cloning using this address: http://xb3wzgc3rfq5fv7w.onion/lambda/esther-compose/
 
 ## Introduction
-**Esther-compose** is a command line tool which wraps [Mustache templating engine](https://mustache.github.io/). **Esther-compose** allows you to 
-render any kind of template. As personal usage, I use it for `docker-compose` file generation from JSON definition.
+**Esther-compose** is a command line tool which wraps [Mustache templating engine](https://mustache.github.io/) and [Go template](https://golang.org/pkg/text/template/). 
+**Esther-compose** allows you to 
+render any kind of text template. As personal usage, I use it to `docker-compose` file from JSON definition.
 
-So **Esther-compose** uses a JSON document to render the given template.
+So **Esther-compose** uses a JSON document as data to render the given template.
 
 ## Command line
+**Esther-compose** offers these command line options:
 
-  * `-template` path to the template 
-  * `-output` path to the rendered file
+  * `-t` path to the template file
+  * `-o` path to the rendered file
+  * `-m` to use Mustache format, Go template will be used otherwise
   
 The JSON document is read from the standard input. It could be either piped or manually typed.
 
@@ -40,7 +43,20 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
   * `linux 386`
   * `linux amd64`
 
-## Example
+### v2.0
+  * Support **Go template** and **Mustache template** format
+  * Rename option `-template` by `-t`
+  * Rename option `-output` by `-o`
+   
+Download [binary](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/28/artifacts/browse/pkg/) distribution. 
+
+### v1.0
+  * Support **Mustache** templates
+  * Read input data from pipe or `stdin`
+   
+Download [binary](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/27/artifacts/browse/pkg/) distribution. 
+
+## Example with Mustache template
 **data.json**
 ```
 {
@@ -61,7 +77,7 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
 
 **Execution**
 ```
-cat data.json | ./pkg/esther-compose_linux_amd64 -template tpl.txt -output out.txt
+cat data.json | ./pkg/esther-compose_linux_amd64 -t tpl.txt -o out.txt
 ```
 
 **out.txt**

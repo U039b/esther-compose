@@ -24,7 +24,9 @@ import ("bufio"
         "flag"
         "./mustache"
         "encoding/json"
-    "strings"
+        "strings"
+        "text/template"
+        "io/ioutil"
 )
 func check(e error) {
     if e != nil {
@@ -49,31 +51,61 @@ func is_piped() bool {
     return (stat.Mode() & os.ModeCharDevice) == 0
 }
 
-func Process(templateFile string, outputFile string, parameters interface{}) {
-    t, err := mustache.ParseFile(templateFile)
-    check(err)
-    s, _ := t.Render(parameters)
-    if strings.Compare("EMPTY", outputFile) != 0 {
-        f, err := os.Create(outputFile)
+func ReadFileContent(path string) ([]byte, error) {
+    return ioutil.ReadFile(path);
+}
+
+func Process(templateFile string, outputFile string, useMustache bool, parameters interface{}) {
+    if useMustache {
+        t, err := mustache.ParseFile(templateFile)
         check(err)
-        defer f.Close()
-        w := bufio.NewWriter(f)
-        _, err = w.WriteString(s)
-        w.Flush()
-        check(err)
-        fmt.Println("Finish")
+        s, _ := t.Render(parameters)
+        if strings.Compare("EMPTY", outputFile) != 0 {
+            f, err := os.Create(outputFile)
+            check(err)
+            defer f.Close()
+            w := bufio.NewWriter(f)
+            _, err = w.WriteString(s)
+            w.Flush()
+            check(err)
+            fmt.Println("Finish")
+        } else {
+            fmt.Printf("%s\n", s)
+        }
     } else {
-        fmt.Printf("%s\n", s)
+        // Get template content
+        tpl, err := ReadFileContent(templateFile);
+        check(err);
+
+        // Create a new template and parse
+	    t := template.Must(template.New("t").Parse(string(tpl)));
+
+        if strings.Compare("EMPTY", outputFile) != 0 {
+            f, err := os.Create(outputFile)
+            check(err)
+            defer f.Close()
+            w := bufio.NewWriter(f)
+            t.Execute(w, parameters);
+            w.Flush()
+            check(err)
+            fmt.Println("Finish")
+        } else {
+            check(t.Execute(os.Stdout, parameters))
+        }
+
     }
 }
 
 func main() {
-    inputFilePtr := flag.String("template", "./template.txt", "the template file")
-    outputFilePtr := flag.String("output", "EMPTY", "the output file")
+    inputFilePtr := flag.String("t", "./template.txt", "the template file")
+    outputFilePtr := flag.String("o", "EMPTY", "the output file")
+    mustachePtr := flag.Bool("m", false, "use mustache engine")
     flag.Parse()
+
+    fmt.Println(*mustachePtr);
 
     json_txt := read_input()
     var obj interface{}
     json.Unmarshal([]byte(json_txt), &obj)
-    Process(*inputFilePtr, *outputFilePtr, obj)
+    Process(*inputFilePtr, *outputFilePtr, *mustachePtr, obj)
 }
