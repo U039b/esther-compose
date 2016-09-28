@@ -48,7 +48,7 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
   * Rename option `-template` by `-t`
   * Rename option `-output` by `-o`
    
-Download [binary](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/28/artifacts/browse/pkg/) distribution. 
+Download [binary](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/29/artifacts/browse/pkg/) distribution. 
 
 ### v1.0
   * Support **Mustache** templates
