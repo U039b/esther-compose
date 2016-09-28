@@ -22,7 +22,7 @@ Prefer browsing the code and cloning using this address: http://xb3wzgc3rfq5fv7w
 ## Introduction
 **Esther-compose** is a command line tool which wraps [Mustache templating engine](https://mustache.github.io/) and [Go template](https://golang.org/pkg/text/template/). 
 **Esther-compose** allows you to 
-render any kind of text template. As personal usage, I use it to `docker-compose` file from JSON definition.
+render any kind of text template. As personal usage, I use it to generate `docker-compose` file from JSON definition.
 
 So **Esther-compose** uses a JSON document as data to render the given template.
 
