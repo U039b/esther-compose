@@ -42,6 +42,7 @@ func read_input() string {
 	}
 	if err := scanner.Err(); err != nil {
 		fmt.Fprintln(os.Stderr, "reading standard input:", err)
+        check(err)
 	}
     return json
 }
@@ -101,8 +102,6 @@ func main() {
     outputFilePtr := flag.String("o", "EMPTY", "the output file")
     mustachePtr := flag.Bool("m", false, "use mustache engine")
     flag.Parse()
-
-    fmt.Println(*mustachePtr);
 
     json_txt := read_input()
     var obj interface{}
