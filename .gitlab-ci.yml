@@ -1,4 +1,8 @@
 compile_all:
+  stage: build
+  only:
+   - tags
+   - triggers
   script:
    - sh build.sh
   artifacts:
