@@ -46,7 +46,7 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
 ### v2.1
   * Fix wrong output format due to nasty debug trace
    
-Download [binary](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/32/artifacts/browse/pkg/) distribution. 
+Download [binary](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/45/artifacts/browse/pkg/) distribution. 
 
 ### v2.0
   * Support **Go template** and **Mustache template** format
