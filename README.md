@@ -38,10 +38,10 @@ The JSON document is read from the standard input. It could be either piped or m
 ## Binary distribution
 A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds):
 
-      * `darwin 386`
-      * `darwin amd64`
-      * `linux 386`
-      * `linux amd64`
+  * `darwin 386`
+  * `darwin amd64`
+  * `linux 386`
+  * `linux amd64`
 
 ### v2.1
   * Fix wrong output format due to nasty debug trace
