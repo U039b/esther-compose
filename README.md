@@ -39,12 +39,14 @@ The JSON document is read from the standard input. It could be either piped or m
 A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/): 
 Or click on following links:
 
-  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="20px"/> `esther-compose_2.2_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_386.deb) 
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="20px"/> `esther-compose_2.2_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_386.deb)
+   
     ```bash
     wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_386.deb
     sudo dpkg -i esther-compose_2.2_386.deb
     ```
   * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="20px"/> `esther-compose_2.2_amd64.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_amd64.deb)
+  
     ```bash
     wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_amd64.deb
     sudo dpkg -i esther-compose_2.2_amd64.deb
