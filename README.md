@@ -79,7 +79,6 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
     { "name": "rip" }
   ]
 }
-
 ```
 **tpl.txt**
 ```
