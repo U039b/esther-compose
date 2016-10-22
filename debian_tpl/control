@@ -1,0 +1,10 @@
+Package: esther-compose
+Version: #VERSION
+Section: devel
+Priority: optional
+Architecture: #ARCH
+Depends: bash (>= 2.05a-11)
+Maintainer: U+039b <*@0x39b.fr>
+Description: Basic template render
+ Esther-compose allows you to render any kind of text template
+  based on Mustache or Go template formats.

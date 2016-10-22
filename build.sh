@@ -1,21 +1,15 @@
-mkdir ./pkg
+#! /bin/bash
 
-export GOOS=darwin
-export GOARCH=386
-go build src/esther-compose.go
-cp esther-compose pkg/esther-compose_${GOOS}_${GOARCH}
+VERSION=`git describe --abbrev=0 --tags`
 
-export GOOS=darwin
-export GOARCH=amd64
-go build src/esther-compose.go
-cp esther-compose pkg/esther-compose_${GOOS}_${GOARCH}
+# Build debian packages
+sh build_deb.sh $VERSION
 
-export GOOS=linux
-export GOARCH=386
-go build src/esther-compose.go
-cp esther-compose pkg/esther-compose_${GOOS}_${GOARCH}
+# Build binaries
+sh build_bin.sh
 
-export GOOS=linux
-export GOARCH=amd64
-go build src/esther-compose.go
-cp esther-compose pkg/esther-compose_${GOOS}_${GOARCH}
+# Generate changelog
+previous_tag=`git tag | sort -t '-' -k 1 -V | tail -n1`
+echo "Esther-compose $VERSION changelog" > ./pkg/CHANGELOG
+git log --pretty=oneline HEAD...${previous_tag} | cut -d' ' -f2- | grep -v "Merge branch" | awk '{print "  * "$LINE}' >> ./pkg/CHANGELOG
+

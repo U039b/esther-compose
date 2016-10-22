@@ -1,0 +1,26 @@
+.TH "ESTHER-COMPOSE" "1" "October 2016" "" ""
+.SH "NAME"
+\fBesther-compose\fR - This tool renders any kind of text template
+.P
+.SH "SYNOPSYS"
+\fBesther-compose \[lB]-mto\[rB]\fR
+.P
+.SH "DESCRIPTION"
+Esther-compose is a command line tool which wraps Mustache templating engine and Go template. Esther-compose allows you to render any kind of text template. Esther-compose uses a JSON document as data to render the given template.
+.P
+.SH "OPTIONS"
+Esther-compose offers these command line options:
+.RS 0
+.IP \(bu 4
+\fB-t\fR path to the template file
+.IP \(bu 4
+\fB-o\fR path to the rendered file
+.IP \(bu 4
+\fB-m\fR to use Mustache format, Go template will be used otherwise
+.RE 0
+
+.P
+The JSON document is read from the standard input. It could be either piped or manually typed.
+.P
+.SH "AUTHOR"
+Contact U+039b \fI\(la*@0x39b.fr\(ra\fR
