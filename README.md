@@ -1,4 +1,5 @@
 # Esther-compose
+
 ```
 Esther-compose is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,7 +36,7 @@ So **Esther-compose** uses a JSON document as data to render the given template.
   
 The JSON document is read from the standard input. It could be either piped or manually typed.
 
-## Debian and Ubuntu packages
+## Debian and Ubuntu packages [![build status](http://gitlab.s1.0x39b.fr/lambda/esther-compose/badges/2.2/build.svg)](http://gitlab.s1.0x39b.fr/lambda/esther-compose/commits/2.2)
 A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/): 
 Or click on following links:
 
@@ -60,7 +61,7 @@ A `man` page is available, simply type:
 man esther-compose
 ```
 
-## Binary distribution
+## Binary distribution [![build status](http://gitlab.s1.0x39b.fr/lambda/esther-compose/badges/2.2/build.svg)](http://gitlab.s1.0x39b.fr/lambda/esther-compose/commits/2.2)
 A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/):
 
   * `darwin 386`
