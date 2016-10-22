@@ -35,7 +35,7 @@ So **Esther-compose** uses a JSON document as data to render the given template.
   
 The JSON document is read from the standard input. It could be either piped or manually typed.
 
-## Debian and binary packages
+## Debian and Ubuntu packages
 A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/): 
 Or click on following links:
 
@@ -59,7 +59,6 @@ A `man` page is available, simply type:
 ```bash
 man esther-compose
 ```
-
 
 ## Binary distribution
 A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/):
