@@ -85,9 +85,10 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
 ```
 **tpl.txt**
 ```
-{{#subdomain}}
-  * {{name}}.hostname.org
-{{/subdomain}}
+{{=<% %>=}}
+<% #subdomain %>
+  * <% name %>.hostname.org
+<% /subdomain %>
 ```
 
 **Execution**
