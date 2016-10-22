@@ -1,0 +1,1 @@
+cat e-c.json | esther-compose -m -t ./README.md.tpl > README.md
