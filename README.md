@@ -76,22 +76,23 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
 **data.json**
 ```json
 {
-  "subdomain": [
-    { "name": "resque" },
-    { "name": "hub" },
-    { "name": "rip" }
-  ]
+    "Subdomain": [
+    {"Name": "resque"},
+    {"Name": "hub"},
+    {"Name": "rip"}
+    ]
 }
 ```
 **tpl.txt**
 ```
-
-
+{{ #Subdomain }}
+* {{Name}}.hostname.org
+{{ /Subdomain }}
 ```
 
 **Execution**
 ```bash
-cat data.json | esther-compose -m -t ./tpl.txt -o ./out.txt
+cat data.json | esther-compose -t ./tpl.txt -o ./out.txt
 ```
 
 **out.txt**

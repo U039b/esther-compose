@@ -1,5 +1,5 @@
 # Esther-compose
-
+{{=<% %>=}}
 ```
 Esther-compose is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -39,21 +39,21 @@ So **Esther-compose** uses a JSON document as data to render the given template.
   
 The JSON document is read from the standard input. It could be either piped or manually typed.
 
-## Debian and Ubuntu packages [![build status](http://gitlab.s1.0x39b.fr/lambda/esther-compose/badges/{{latest.tag}}/build.svg)](http://gitlab.s1.0x39b.fr/lambda/esther-compose/commits/{{latest.tag}})
-A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/{{latest.build}}/artifacts/file/pkg/): 
+## Debian and Ubuntu packages [![build status](http://gitlab.s1.0x39b.fr/lambda/esther-compose/badges/<%latest.tag%>/build.svg)](http://gitlab.s1.0x39b.fr/lambda/esther-compose/commits/<%latest.tag%>)
+A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/): 
 Or click on following links:
 
-  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_{{latest.tag}}_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/{{latest.build}}/artifacts/file/pkg/esther-compose_{{latest.tag}}_386.deb)
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_<%latest.tag%>_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_386.deb)
    
     ```bash
-    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/{{latest.build}}/artifacts/file/pkg/esther-compose_{{latest.tag}}_386.deb
-    sudo dpkg -i esther-compose_{{latest.tag}}_386.deb
+    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_386.deb
+    sudo dpkg -i esther-compose_<%latest.tag%>_386.deb
     ```
-  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_{{latest.tag}}_amd64.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/{{latest.build}}/artifacts/file/pkg/esther-compose_{{latest.tag}}_amd64.deb)
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_<%latest.tag%>_amd64.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_amd64.deb)
   
     ```bash
-    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/{{latest.build}}/artifacts/file/pkg/esther-compose_{{latest.tag}}_amd64.deb
-    sudo dpkg -i esther-compose_{{latest.tag}}_amd64.deb
+    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_amd64.deb
+    sudo dpkg -i esther-compose_<%latest.tag%>_amd64.deb
     ```
     
 These packages are not compliant with Debian package policy. For more information, run `lintian` on `.deb`.
@@ -64,8 +64,8 @@ A `man` page is available, simply type:
 man esther-compose
 ```
 
-## Binary distribution [![build status](http://gitlab.s1.0x39b.fr/lambda/esther-compose/badges/{{latest.tag}}/build.svg)](http://gitlab.s1.0x39b.fr/lambda/esther-compose/commits/{{latest.tag}})
-A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/{{latest.build}}/artifacts/file/pkg/):
+## Binary distribution [![build status](http://gitlab.s1.0x39b.fr/lambda/esther-compose/badges/<%latest.tag%>/build.svg)](http://gitlab.s1.0x39b.fr/lambda/esther-compose/commits/<%latest.tag%>)
+A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/):
 
   * `darwin 386`
   * `darwin amd64`
@@ -76,24 +76,23 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
 **data.json**
 ```json
 {
-  "subdomain": [
-    { "name": "resque" },
-    { "name": "hub" },
-    { "name": "rip" }
-  ]
+    "Subdomain": [
+    {"Name": "resque"},
+    {"Name": "hub"},
+    {"Name": "rip"}
+    ]
 }
 ```
 **tpl.txt**
 ```
-{{=<% %>=}}
-<% #subdomain %>
-  * <% name %>.hostname.org
-<% /subdomain %>
+{{ #Subdomain }}
+* {{Name}}.hostname.org
+{{ /Subdomain }}
 ```
 
 **Execution**
 ```bash
-cat data.json | esther-compose -m -t ./tpl.txt -o ./out.txt
+cat data.json | esther-compose -t ./tpl.txt -o ./out.txt
 ```
 
 **out.txt**
