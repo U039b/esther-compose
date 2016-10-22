@@ -92,7 +92,7 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
 
 **Execution**
 ```bash
-cat data.json | esther-compose -t ./tpl.txt -o ./out.txt
+cat data.json | esther-compose -m -t ./tpl.txt -o ./out.txt
 ```
 
 **out.txt**
