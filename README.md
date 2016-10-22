@@ -35,6 +35,14 @@ So **Esther-compose** uses a JSON document as data to render the given template.
   
 The JSON document is read from the standard input. It could be either piped or manually typed.
 
+## Debian and Ubuntu packages
+A packaged version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds):
+
+  * `linux 386`
+  * `linux amd64`
+
+These packages are compliant with Debian package policy. For more information, run `lintian` on `.deb`.
+
 ## Binary distribution
 A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds):
 
@@ -42,6 +50,11 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
   * `darwin amd64`
   * `linux 386`
   * `linux amd64`
+
+### v2.2
+  * Packaging for Debian 
+   
+Download [binary or `.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/browse/pkg/) distribution. 
 
 ### v2.1
   * Fix wrong output format due to nasty debug trace
