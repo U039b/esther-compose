@@ -31,10 +31,10 @@ So **Esther-compose** uses a JSON document as data to render the given template.
 **Esther-compose** offers these command line options:
 
   * `-t` path to the template file
-         must be an absolute path or relative path prefixed by `./`
+    * must be an absolute path or relative path prefixed by `./`
   * `-o` path to the rendered file
-         must be an absolute path or relative path prefixed by `./`
-         if omitted, result is printed on `stdout`
+    * must be an absolute path or relative path prefixed by `./`
+    * if omitted, result is printed on `stdout`
   * `-m` to use Mustache format, Go template will be used otherwise
   
 The JSON document is read from the standard input. It could be either piped or manually typed.
