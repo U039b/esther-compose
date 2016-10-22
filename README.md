@@ -35,22 +35,70 @@ So **Esther-compose** uses a JSON document as data to render the given template.
   
 The JSON document is read from the standard input. It could be either piped or manually typed.
 
-## Debian and Ubuntu packages
-A packaged version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds):
+## Debian and binary packages
+A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/): 
+Or click on following links:
 
-  * `linux 386`
-  * `linux amd64`
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="20px"/> `esther-compose_2.2_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_386.deb) 
+    ```bash
+    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_386.deb
+    sudo dpkg -i esther-compose_2.2_386.deb
+    ```
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="20px"/> `esther-compose_2.2_amd64.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_amd64.deb)
+    ```bash
+    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_amd64.deb
+    sudo dpkg -i esther-compose_2.2_amd64.deb
+    ```
+    
+These packages are not compliant with Debian package policy. For more information, run `lintian` on `.deb`.
 
-These packages are compliant with Debian package policy. For more information, run `lintian` on `.deb`.
+### Manual
+A `man` page is available, simply type:
+```bash
+man esther-compose
+```
+
 
 ## Binary distribution
-A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds):
+A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/):
 
   * `darwin 386`
   * `darwin amd64`
   * `linux 386`
   * `linux amd64`
 
+## Example with Mustache template
+**data.json**
+```json
+{
+  "subdomain": [
+    { "name": "resque" },
+    { "name": "hub" },
+    { "name": "rip" }
+  ]
+}
+
+```
+**tpl.txt**
+```
+{{#subdomain}}
+  * {{name}}.hostname.org
+{{/subdomain}}
+```
+
+**Execution**
+```bash
+cat data.json | ./pkg/esther-compose_linux_amd64 -t tpl.txt -o out.txt
+```
+
+**out.txt**
+```
+  * resque.hostname.org
+  * hub.hostname.org
+  * rip.hostname.org
+```
+
+## Versions 
 ### v2.2
   * Packaging for Debian 
    
@@ -73,34 +121,3 @@ Download [binary](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/29/art
   * Read input data from pipe or `stdin`
    
 Download [binary](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/27/artifacts/browse/pkg/) distribution. 
-
-## Example with Mustache template
-**data.json**
-```
-{
-  "subdomain": [
-    { "name": "resque" },
-    { "name": "hub" },
-    { "name": "rip" }
-  ]
-}
-```
-
-**tpl.txt**
-```
-{{#subdomain}}
-  * {{name}}.hostname.org
-{{/subdomain}}
-```
-
-**Execution**
-```
-cat data.json | ./pkg/esther-compose_linux_amd64 -t tpl.txt -o out.txt
-```
-
-**out.txt**
-```
-  * resque.hostname.org
-  * hub.hostname.org
-  * rip.hostname.org
-```
