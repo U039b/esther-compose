@@ -31,7 +31,10 @@ So **Esther-compose** uses a JSON document as data to render the given template.
 **Esther-compose** offers these command line options:
 
   * `-t` path to the template file
+         must be an absolute path or relative path prefixed by `./`
   * `-o` path to the rendered file
+         must be an absolute path or relative path prefixed by `./`
+         if omitted, result is printed on `stdout`
   * `-m` to use Mustache format, Go template will be used otherwise
   
 The JSON document is read from the standard input. It could be either piped or manually typed.
@@ -89,7 +92,7 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
 
 **Execution**
 ```bash
-cat data.json | ./pkg/esther-compose_linux_amd64 -t tpl.txt -o out.txt
+cat data.json | esther-compose -m -t ./tpl.txt -o ./out.txt
 ```
 
 **out.txt**
