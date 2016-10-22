@@ -43,13 +43,13 @@ The JSON document is read from the standard input. It could be either piped or m
 A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/): 
 Or click on following links:
 
-  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="20px"/> `esther-compose_2.2_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_386.deb)
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_2.2_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_386.deb)
    
     ```bash
     wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_386.deb
     sudo dpkg -i esther-compose_2.2_386.deb
     ```
-  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="20px"/> `esther-compose_2.2_amd64.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_amd64.deb)
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_2.2_amd64.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_amd64.deb)
   
     ```bash
     wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/48/artifacts/file/pkg/esther-compose_2.2_amd64.deb
@@ -85,9 +85,7 @@ A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39
 ```
 **tpl.txt**
 ```
-{{#subdomain}}
-  * {{name}}.hostname.org
-{{/subdomain}}
+
 ```
 
 **Execution**
@@ -125,3 +123,4 @@ Download [binary](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/29/art
   * Read input data from pipe or `stdin`
    
 Download [binary](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/27/artifacts/browse/pkg/) distribution. 
+
