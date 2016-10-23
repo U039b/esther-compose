@@ -1,4 +1,4 @@
-package mustache
+package main
 
 import (
     "bytes"

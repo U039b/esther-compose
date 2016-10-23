@@ -22,7 +22,6 @@ import ("bufio"
         "fmt"
         "os"
         "flag"
-        "./mustache"
         "encoding/json"
         "strings"
         "text/template"
@@ -58,7 +57,7 @@ func ReadFileContent(path string) ([]byte, error) {
 
 func Process(templateFile string, outputFile string, useMustache bool, parameters interface{}) {
     if useMustache {
-        t, err := mustache.ParseFile(templateFile)
+        t, err := ParseFile(templateFile)
         check(err)
         s, _ := t.Render(parameters)
         if strings.Compare("EMPTY", outputFile) != 0 {
