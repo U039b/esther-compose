@@ -26,6 +26,7 @@ import ("bufio"
         "strings"
         "text/template"
         "io/ioutil"
+        "./mustache"
 )
 func check(e error) {
     if e != nil {
@@ -57,7 +58,7 @@ func ReadFileContent(path string) ([]byte, error) {
 
 func Process(templateFile string, outputFile string, useMustache bool, parameters interface{}) {
     if useMustache {
-        t, err := ParseFile(templateFile)
+        t, err := mustache.ParseFile(templateFile)
         check(err)
         s, _ := t.Render(parameters)
         if strings.Compare("EMPTY", outputFile) != 0 {
