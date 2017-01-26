@@ -26,7 +26,7 @@ import ("bufio"
         "strings"
         "text/template"
         "io/ioutil"
-        "./mustache"
+        "github.com/hoisie/mustache"
 )
 func check(e error) {
     if e != nil {
@@ -60,7 +60,7 @@ func Process(templateFile string, outputFile string, useMustache bool, parameter
     if useMustache {
         t, err := mustache.ParseFile(templateFile)
         check(err)
-        s, _ := t.Render(parameters)
+        s := t.Render(parameters)
         if strings.Compare("EMPTY", outputFile) != 0 {
             f, err := os.Create(outputFile)
             check(err)
