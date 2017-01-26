@@ -40,19 +40,19 @@ So **Esther-compose** uses a JSON document as data to render the given template.
 The JSON document is read from the standard input. It could be either piped or manually typed.
 
 ## Debian and Ubuntu packages [![build status](http://gitlab.s1.0x39b.fr/lambda/esther-compose/badges/2.3/build.svg)](http://gitlab.s1.0x39b.fr/lambda/esther-compose/commits/2.3)
-A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/49/artifacts/browse/pkg/):
+A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/58/artifacts/browse/pkg/):
 Or click on following links:
 
-  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_2.3_linux_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/49/artifacts/file/pkg/esther-compose_2.3_linux_386.deb)
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_2.3_linux_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/58/artifacts/file/pkg/esther-compose_2.3_linux_386.deb)
    
     ```bash
-    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/49/artifacts/file/pkg/esther-compose_2.3_linux_386.deb
+    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/58/artifacts/file/pkg/esther-compose_2.3_linux_386.deb
     sudo dpkg -i esther-compose_2.3_linux_386.deb
     ```
-  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_2.3_linux_amd64.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/49/artifacts/file/pkg/esther-compose_2.3_linux_amd64.deb)
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_2.3_linux_amd64.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/58/artifacts/file/pkg/esther-compose_2.3_linux_amd64.deb)
   
     ```bash
-    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/49/artifacts/file/pkg/esther-compose_2.3_linux_amd64.deb
+    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/58/artifacts/file/pkg/esther-compose_2.3_linux_amd64.deb
     sudo dpkg -i esther-compose_2.3_linux_amd64.deb
     ```
     
@@ -65,7 +65,7 @@ man esther-compose
 ```
 
 ## Binary distribution [![build status](http://gitlab.s1.0x39b.fr/lambda/esther-compose/badges/2.3/build.svg)](http://gitlab.s1.0x39b.fr/lambda/esther-compose/commits/2.3)
-A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/49/artifacts/browse/pkg/):
+A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/58/artifacts/browse/pkg/):
 
   * `darwin 386`
   * `darwin amd64`
