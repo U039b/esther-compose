@@ -40,20 +40,20 @@ So **Esther-compose** uses a JSON document as data to render the given template.
 The JSON document is read from the standard input. It could be either piped or manually typed.
 
 ## Debian and Ubuntu packages [![build status](http://gitlab.s1.0x39b.fr/lambda/esther-compose/badges/<%latest.tag%>/build.svg)](http://gitlab.s1.0x39b.fr/lambda/esther-compose/commits/<%latest.tag%>)
-A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/): 
+A packaged version for Debian and Ubuntu is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/browse/pkg/):
 Or click on following links:
 
-  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_<%latest.tag%>_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_386.deb)
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_<%latest.tag%>_linux_386.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_linux_386.deb)
    
     ```bash
-    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_386.deb
-    sudo dpkg -i esther-compose_<%latest.tag%>_386.deb
+    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_linux_386.deb
+    sudo dpkg -i esther-compose_<%latest.tag%>_linux_386.deb
     ```
-  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_<%latest.tag%>_amd64.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_amd64.deb)
+  * [<img src="https://www.debian.org/logos/openlogo-nd-25.png" height="24px"/> <img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_cof-orange-hex.png" height="24px"/> `esther-compose_<%latest.tag%>_linux_amd64.deb`](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_linux_amd64.deb)
   
     ```bash
-    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_amd64.deb
-    sudo dpkg -i esther-compose_<%latest.tag%>_amd64.deb
+    wget https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/esther-compose_<%latest.tag%>_linux_amd64.deb
+    sudo dpkg -i esther-compose_<%latest.tag%>_linux_amd64.deb
     ```
     
 These packages are not compliant with Debian package policy. For more information, run `lintian` on `.deb`.
@@ -65,12 +65,15 @@ man esther-compose
 ```
 
 ## Binary distribution [![build status](http://gitlab.s1.0x39b.fr/lambda/esther-compose/badges/<%latest.tag%>/build.svg)](http://gitlab.s1.0x39b.fr/lambda/esther-compose/commits/<%latest.tag%>)
-A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/file/pkg/):
+A compiled version is available in the [artifacts folder](https://gitlab.s1.0x39b.fr/lambda/esther-compose/builds/<%latest.build%>/artifacts/browse/pkg/):
 
   * `darwin 386`
   * `darwin amd64`
   * `linux 386`
   * `linux amd64`
+  * `armhf 5`
+  * `armhf 6`
+  * `armhf 7`
 
 ## Example with Mustache template
 **data.json**
